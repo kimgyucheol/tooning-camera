@@ -1,0 +1,174 @@
+body { margin: 0; }
+.mirror { transform: rotateY(180deg); }
+.loader { 
+  border-top-color: #f97316; 
+  animation: spinner 1s linear infinite; 
+}
+@keyframes spinner { 
+  0% { transform: rotate(0deg); } 
+  100% { transform: rotate(360deg); } 
+}
+.fade-in { animation: fadeIn 0.5s ease-in; }
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(10px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+.slide-up { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes slideUp { 
+  from { opacity: 0; transform: translateY(30px) scale(0.95); } 
+  to { opacity: 1; transform: translateY(0) scale(1); } 
+}
+.gradient-bg {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+}
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.2);
+}
+
+/* 인트로 */
+#initial-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a0f08 0%, #2d1810 50%, #3d2015 100%);
+}
+
+#three-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.5;
+}
+
+.loading-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 3rem 4rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.title-text {
+  font-size: 1.875rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle-text {
+  color: #fcd34d;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.loading-bar {
+  width: 280px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 2.5rem auto 1.5rem;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f97316, #fbbf24, #f97316);
+  background-size: 200% 100%;
+  animation: loadingBarAnimation 2s ease-in-out infinite;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.8);
+}
+
+@keyframes loadingBarAnimation {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.status-text {
+  color: #fcd34d;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.pulse-dot {
+  animation: pulseDot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px rgba(249, 115, 22, 0.8); }
+  50% { transform: scale(1.3); opacity: 0.5; box-shadow: 0 0 20px rgba(249, 115, 22, 1); }
+}
+
+/* 주민번호 입력 */
+.ssn-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.ssn-input {
+  flex: 1;
+  width: 45%;
+  padding: 0.75rem 0.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  background: white;
+  min-width: 0;
+}
+.ssn-input:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+  transform: scale(1.02);
+}
+.ssn-input::placeholder {
+  color: #d1d5db;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.ssn-separator {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f97316;
+  user-select: none;
+}
+
+.pulse-ring {
+  animation: pulseRing 1.5s ease-in-out infinite;
+}
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin { animation: spin 1s linear infinite; }
