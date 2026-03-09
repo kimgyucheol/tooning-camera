@@ -7,10 +7,10 @@
 
   // ★★★ 여기에 GAS 웹앱 배포 URL을 입력하세요 ★★★
   // 예: 'https://script.google.com/macros/s/AKfycbx.../exec'
-  window.GAS_API_URL = 'https://여기에_GAS_웹앱_URL을_입력하세요/exec';
+  window.GAS_API_URL = 'https://script.google.com/macros/s/AKfycbwGI_KFJBuv6k_RvQZONf2kF-E6cGXGzInEgstEUHGYe5d4vltKVbBy3AOTbkDiq0lU/exec';
 
   // ★★★ 여기에 Google Maps API 키를 입력하세요 ★★★
-  window.GMAPS_API_KEY = '여기에_GMAPS_KEY를_입력하세요';
+  window.GMAPS_API_KEY = 'AIzaSyAX6fJYXIJkINFXFPMN7tHvrfwVXmcuQ10';
 
   // ===== GET 요청 =====
   window.apiGet = async function(action, params) {
